@@ -3,7 +3,7 @@ package com.aluracursos.challenge_forohub.services;
 import com.aluracursos.challenge_forohub.dominio.topico.Topico;
 import com.aluracursos.challenge_forohub.dominio.usuario.Usuario;
 import com.aluracursos.challenge_forohub.dominio.usuario.UsuarioRepository;
-import com.aluracursos.challenge_forohub.infra.exceptions.UsuarioNoEncontrado;
+import com.aluracursos.challenge_forohub.infra.exceptions.UsuarioNoEncontradoException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,6 +21,6 @@ public class UsuarioService {
             usuarioRepository.save(usuarioAActualizar);
             return;
         }
-        throw new UsuarioNoEncontrado("El usuario " + usuario + " no fue encontrado");
+        throw new UsuarioNoEncontradoException("El usuario " + usuario + " no fue encontrado");
     }
 }

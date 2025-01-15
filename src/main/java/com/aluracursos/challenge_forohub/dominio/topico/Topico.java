@@ -27,7 +27,7 @@ public class Topico {
     private boolean status;
     @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "curso_id")
     private Curso curso;
-    @OneToMany(mappedBy = "topico", orphanRemoval = true)
+    @OneToMany(mappedBy = "topico", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Mensaje> mensajes = new ArrayList<>();
     @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "usuario_id")
     private Usuario usuario;

@@ -24,9 +24,9 @@ public class Usuario {
     private String nombre;
     private String email;
     private String contraseña;
-    @OneToMany(mappedBy = "usuario", orphanRemoval = true)
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.REMOVE, orphanRemoval = true)
     List<Topico> topicos = new ArrayList<>();
-    @OneToMany(mappedBy = "usuario", orphanRemoval = true)
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.REMOVE, orphanRemoval = true)
     List<Mensaje> mensajes = new ArrayList<>();
 
     public void addTopico(Topico topico) {
