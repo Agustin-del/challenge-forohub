@@ -14,7 +14,5 @@ public class ChallengeForohubApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 
-		Prueba p = new Prueba();
-		p.setNombre("Prueba");
 	}
 }

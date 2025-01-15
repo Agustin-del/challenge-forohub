@@ -1,4 +1,4 @@
-package com.aluracursos.challenge_forohub.curso.categoria;
+package com.aluracursos.challenge_forohub.dominio.categoria;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

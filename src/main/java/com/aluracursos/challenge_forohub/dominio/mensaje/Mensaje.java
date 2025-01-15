@@ -1,7 +1,7 @@
-package com.aluracursos.challenge_forohub.mensaje;
+package com.aluracursos.challenge_forohub.dominio.mensaje;
 
-import com.aluracursos.challenge_forohub.topico.Topico;
-import com.aluracursos.challenge_forohub.usuario.Usuario;
+import com.aluracursos.challenge_forohub.dominio.topico.Topico;
+import com.aluracursos.challenge_forohub.dominio.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 

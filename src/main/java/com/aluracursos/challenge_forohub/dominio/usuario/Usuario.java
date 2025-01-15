@@ -1,7 +1,7 @@
-package com.aluracursos.challenge_forohub.usuario;
+package com.aluracursos.challenge_forohub.dominio.usuario;
 
-import com.aluracursos.challenge_forohub.mensaje.Mensaje;
-import com.aluracursos.challenge_forohub.topico.Topico;
+import com.aluracursos.challenge_forohub.dominio.mensaje.Mensaje;
+import com.aluracursos.challenge_forohub.dominio.topico.Topico;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,9 +24,9 @@ public class Usuario {
     private String nombre;
     private String email;
     private String contraseña;
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "usuario", orphanRemoval = true)
     List<Topico> topicos = new ArrayList<>();
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "usuario", orphanRemoval = true)
     List<Mensaje> mensajes = new ArrayList<>();
 
     public void addTopico(Topico topico) {

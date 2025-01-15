@@ -1,7 +1,7 @@
-package com.aluracursos.challenge_forohub.curso;
+package com.aluracursos.challenge_forohub.dominio.curso;
 
-import com.aluracursos.challenge_forohub.curso.categoria.Categoria;
-import com.aluracursos.challenge_forohub.topico.Topico;
+import com.aluracursos.challenge_forohub.dominio.categoria.Categoria;
+import com.aluracursos.challenge_forohub.dominio.topico.Topico;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +23,7 @@ public class Curso {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
-    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "curso", orphanRemoval = true)
     private List<Topico> topicos = new ArrayList<>();
 
     public void addTopico(Topico topico) {
