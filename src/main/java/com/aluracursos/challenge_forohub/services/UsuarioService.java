@@ -23,4 +23,12 @@ public class UsuarioService {
         }
         throw new UsuarioNoEncontradoException("El usuario " + usuario + " no fue encontrado");
     }
+
+    public Usuario obtenerUsuarioPorUsername(String username) {
+        Usuario usuario = usuarioRepository.findByEmail(username);
+        if(usuario != null) {
+            return usuario;
+        }
+        throw new UsuarioNoEncontradoException("El usuario  " + username + " no fue encontrado");
+    }
 }
